@@ -2,17 +2,19 @@ version: '3.8'
 
 services:
   ubooquity:
-    image: kevindherdt/docker-ubooquity:v3.0
+    image: dimadh/docker-ubooquity:v3.0
     container_name: ubooquity
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/Brussels
+      - TZ=Etc/UTC
       - MAXMEM=
     ports:
       - "2202:2202" #Webui
       - "2203:2203" #Admin Port
     volumes:
-      - ./data:/app/data
-      - /Data/Media/:/library
+      - /path/to/data:/config
+      - /path/to/books:/books
+      - /path/to/comics:/comics
+      - /path/to/raw/files:/files
     restart: unless-stopped
