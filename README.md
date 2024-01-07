@@ -2,3 +2,4 @@ This is the first time I ever build a docker image and published something on gi
 
 This docker-ubooquity is build on the latest beta. As I learn more about all this things might get updated.
 
+A docker-compose file example is uploaded. Please make sure to adjust accordingly.
