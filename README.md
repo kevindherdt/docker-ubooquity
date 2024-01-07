@@ -10,7 +10,9 @@ A docker-compose file example is uploaded. Please make sure to adjust accordingl
 
 Example below :
 
-`version: '3.8'
+
+```
+version: '3.8'
 
 services:
   ubooquity:
@@ -19,16 +21,19 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/Brussels
+      - TZ=Etc/UTC
       - MAXMEM=
     ports:
       - "2202:2202" #Webui
       - "2203:2203" #Admin Port
     volumes:
-      - ./data:/app/data
-      - /Data/Media/:/library
-    restart: unless-stopped`
+      - /path/to/data:/config
+      - /path/to/books:/books
+      - /path/to/comics:/comics
+      - /path/to/raw/files:/files
+    restart: unless-stopped
 
+```
 
 
 If u want to try and run without docker-compose I suppose it works like this : 
